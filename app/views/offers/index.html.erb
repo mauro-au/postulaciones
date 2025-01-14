@@ -10,5 +10,6 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New offer", new_offer_path %>
+<% if user_signed_in? && current_user.isadmin %>
+  <%= link_to "New offer", new_offer_path %>
+<% end %>

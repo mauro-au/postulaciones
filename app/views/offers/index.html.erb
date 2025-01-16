@@ -4,9 +4,8 @@
 
 <div id="offers">
   <% @offers.each do |offer| %>
-    <%= render offer %>
     <p>
-      <%= link_to "Show this offer", offer %>
+      <%= link_to offer.title, offer %>
     </p>
   <% end %>
 </div>

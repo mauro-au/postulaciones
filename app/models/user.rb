@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   before_create :only_one_admin
 
+  has_and_belongs_to_many :offers
+
   private
 
   def only_one_admin

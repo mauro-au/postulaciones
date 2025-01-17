@@ -3,8 +3,15 @@
 <%= render @offer %>
 
 <div>
-  <%= link_to "Edit this offer", edit_offer_path(@offer) %> |
-  <%= link_to "Back to offers", offers_path %>
-
-  <%= button_to "Destroy this offer", @offer, method: :delete %>
+  <%= link_to "Back to offers", offers_path %> |
+  <% if user_signed_in? %>
+    <% if current_user.isadmin %>
+      <%= link_to "Edit this offer", edit_offer_path(@offer) %>
+      <%= button_to "Destroy this offer", @offer, method: :delete %>
+    <% elsif @postulation === nil %>
+      <a href="/postulation/create/<%=@offer.id%>">Postular</a>
+    <% else %>
+      <p>Ya has postulado a esta oferta</p>
+    <% end %>
+  <% end %>
 </div>

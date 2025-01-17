@@ -9,6 +9,8 @@ class OffersController < ApplicationController
 
   # GET /offers/1 or /offers/1.json
   def show
+    offer_id = params[:id]
+    @postulation = Postulation.find_by(offer_id: offer_id, user_id: current_user.id)
   end
 
   # GET /offers/new

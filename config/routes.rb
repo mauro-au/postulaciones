@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'messages/index'
   get "postulation/create/:offer_id", to: "postulation#create", as: "create_postulation"
-  
+  get "postulation/check/:postulation_id", to: "postulation#check", as: "check_postulation"
+
   get 'postulation/destroy'
   resources :offers
   devise_for :users

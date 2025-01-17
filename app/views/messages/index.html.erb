@@ -1,0 +1,7 @@
+<h1>Mensajes</h1>
+
+<ul>
+  <%@postulations.each do |p| %>
+    <li><%=p.user.name%> ha postulado a la oferta <b><%=p.offer.title%></b> <a href="/postulation/check/<%=p.id%>">Leído</a></li>
+  <% end %>
+</ul>
